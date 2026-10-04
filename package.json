@@ -1,0 +1,21 @@
+{
+  "name": "newtonite-ops",
+  "version": "1.0.0",
+  "description": "Newtonite operations management challenge application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "jest --runInBand --forceExit"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "uuid": "^11.0.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
