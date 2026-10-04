@@ -19,10 +19,13 @@ The application uses a small, layered full-stack design that keeps the primary w
 
 ```mermaid
 flowchart LR
-   Browser[Browser UI\nHTML CSS JavaScript] -->|JSON over HTTP| API[Express API]
+   Browser[Browser UI\nHTML CSS JavaScript] --> Views[Operations views\nAll work / My queue / Approval]
+   Views --> Create[Create work item\nmodal]
+   Views -->|JSON over HTTP| API[Express API]
+   Create -->|JSON over HTTP| API
    API --> Auth[Authentication\nand authorization]
-   API --> Store[(SQLite\nwork items and users)]
-   API --> History[(History and\ncomments)]
+   API --> Store[(SQLite\ncurrent work and users)]
+   API --> History[(History and\ncomments audit trail)]
    API --> Queue[Async task queue]
    Queue --> Store
    Queue --> History
